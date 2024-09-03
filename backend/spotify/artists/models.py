@@ -6,6 +6,7 @@ class Artists(models.Model):
     name = models.CharField(max_length=100)
     banner = models.FileField(upload_to='artists_images/', blank=True, null=True)
     isVerified = models.BooleanField(default=False)
+    genre = models.CharField(max_length=20, default='Indefinido')
 
     def __str__(self):
         return self.name

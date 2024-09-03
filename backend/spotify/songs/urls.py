@@ -8,4 +8,5 @@ router.register(r'songs', SongsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('songs/<int:pk>/increment_played_times/', SongsViewSet.as_view({'post': 'update_played_times'}), name='increment_played_times'),
 ]

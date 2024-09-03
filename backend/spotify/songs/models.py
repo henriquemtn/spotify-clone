@@ -16,7 +16,7 @@ class Songs(models.Model):
     title = models.CharField(max_length=100)
     artist = models.ForeignKey(Artists, on_delete=models.CASCADE, related_name='songs')  # Chave estrangeira para Artists
     audio_file = models.FileField(upload_to='audio/', validators=[validate_audio_file])
-
+    played_times = models.PositiveIntegerField(default=0) 
 
     def __str__(self):
         return self.title
