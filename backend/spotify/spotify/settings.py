@@ -11,21 +11,27 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR.parent / 'data' / 'web'
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-zroes+h^^8hmiqd*3if7)ri7dvgg3b9n5t4(fbqx0(=-v68n^q'
+# Obtendo o valor da SECRET KEY no .env
+SECRET_KEY =  os.getenv('SECRET_KEY', 'change-me')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Validando se o projeto possui o .env
+DEBUG = bool(int(os.getenv('DEBUG', 0)))
 
-ALLOWED_HOSTS = []
+# Puxando os allowed hosts do .env e formatando com o strip e split
+ALLOWED_HOSTS = [
+    h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
+    if h.strip()
+]
 
 
 # Application definition
@@ -75,8 +81,12 @@ WSGI_APPLICATION = 'spotify.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': os.getenv('DB_ENGINE', 'change-me'),
+        'NAME': os.getenv('POSTGRES_DB', 'change-me'),
+        'USER': os.getenv('POSTGRES_USER', 'change-me'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'change-me'),
+        'HOST': os.getenv('POSTGRES_HOST', 'change-me'),
+        'PORT': os.getenv('POSTGRES_PORT', 'change-me')
     }
 }
 
@@ -103,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -115,7 +125,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# /data/web/static
+STATIC_ROOT = DATA_DIR / 'static'
+
+MEDIA_URL = '/media/'
+# /data/web/media
+MEDIA_ROOT = DATA_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
