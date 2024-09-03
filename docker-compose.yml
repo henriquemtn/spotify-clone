@@ -27,7 +27,7 @@ services:
   psql:
     ports:
       - 5432:5432
-    container_name: psql
+    container_name: spotify-psql
     image: postgres:13-alpine
     volumes:
       - ./backend/data/postgres/data:/var/lib/postgresql/data/
