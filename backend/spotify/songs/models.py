@@ -1,7 +1,9 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+import os
 
 def validate_audio_file(value):
-    valid_extensions = ['mp3', 'wav', 'ogg', 'flac']  # Adicione outras extensões conforme necessário
+    valid_extensions = ['.mp3', '.wav', '.ogg', '.flac']  # Adicione outras extensões conforme necessário
     ext = os.path.splitext(value.name)[1]  # Obtém a extensão do arquivo
     if ext.lower() not in valid_extensions:
         raise ValidationError(f'Unsupported file extension. Allowed extensions are: {", ".join(valid_extensions)}.')
