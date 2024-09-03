@@ -25,6 +25,8 @@ services:
 
   # Container do PostgreSQL
   psql:
+    ports:
+      - 5432:5432
     container_name: psql
     image: postgres:13-alpine
     volumes:
