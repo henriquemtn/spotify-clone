@@ -7,8 +7,12 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'email']
-
+        
+# Serializer para Songs
 class SongsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Songs
         fields = ['id', 'title', 'artist', 'audio_file']
+        extra_kwargs = {
+            'artist': {'required': True},
+        }
