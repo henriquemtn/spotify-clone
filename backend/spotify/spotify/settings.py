@@ -33,6 +33,12 @@ ALLOWED_HOSTS = [
     if h.strip()
 ]
 
+# Configurações CORS
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # URL do frontend
+]
+
+
 
 # Application definition
 
