@@ -1,9 +1,9 @@
-/djangoapp/static/
-/djangoapp/media/
-/djangoapp/project/local_settings.py
+/backend/spotify/static/
+/backend/spotify/media/
+/backend/spotify/project/local_settings.py
 gunicorn-error-log
 __localcode
-/data/
+/backend/data/
 
 # Django #
 *.log
