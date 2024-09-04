@@ -1,4 +1,21 @@
 services:
+  frontend:
+    container_name: frontend_spotify
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+    working_dir: /src
+    volumes:
+      - ./frontend:/src
+    tty: true # executa o container continuamente
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:3000"]
+      timeout: 10s
+      retries: 5
+    depends_on:
+      spotify:
+        condition: service_healthy
 
   # Container do Back-end
   spotify:
