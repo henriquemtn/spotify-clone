@@ -1,18 +1,17 @@
-import {
-  Divider,
-  IconButton,
-  InputBase,
-  Paper,
-} from "@mui/material";
+import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import ImageAvatars from "../ui/avatar";
 import OpenIcon from "../../assets/open-icon.png";
 import SearchIcon from "../../assets/search-icon.png";
+import HomeIcon from "../../assets/home-icon.png";
+import BellIcon from "../../assets/bell.png";
+import DownloadIcon from "../../assets/download.png";
+
 import "./index.css";
 
 export default function Header() {
   return (
     <div className="container">
-      <div className="global-nav-bar-left">
+      <div className="global-nav-left-bar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -25,7 +24,10 @@ export default function Header() {
           />
         </svg>
       </div>
-      <div data-testid="global-nav-bar">
+      <div className="global-nav-bar">
+        <button className="home-button">
+          <img src={HomeIcon} alt="home-icon" />
+        </button>
         <Paper
           component="form"
           sx={{
@@ -58,12 +60,19 @@ export default function Header() {
             sx={{ p: "10px", color: "#b3b3b3" }}
             aria-label="directions"
           >
-           <img src={OpenIcon} />
+            <img src={OpenIcon} />
           </IconButton>
         </Paper>
       </div>
-      <div data-testid="global-nav-bar">
-        <ImageAvatars />
+      <div className="global-nav-right-bar">
+        <div className="download-app">
+          <img src={DownloadIcon} />
+          <a href="">Instalar aplicativo</a>
+        </div>
+        <div className="avatar">
+          <img className="bell" src={BellIcon} />
+          <ImageAvatars />
+        </div>
       </div>
     </div>
   );
