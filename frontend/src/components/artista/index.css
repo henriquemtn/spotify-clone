@@ -1,23 +1,68 @@
 .container-artists {
-    width: 100%;
-    max-width: 1280px;
-    padding: 0px 24px 24px 24px;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0px 24px 24px 24px;
+  margin: 0 auto;
+}
+
+/* Banner do Artista */
+.artist-banner {
+  width: 100%;
+  height: 400px;
+  padding: 16px;
+  margin: 0px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.artist-info {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: auto;
+  padding-left: 16px;
+  padding-bottom: 16px;
 }
 
 .verified-artist {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    background-color: #121212;
-    border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 8px;
+  z-index: 10;
+  position: relative;
 }
 
 .verified-icon {
-    width: 24px;
-    height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .verified-artist p {
-    color: #fff;
-    font-size: 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.artist-name {
+  color: #fff;
+  font-size: 4.5rem;
+  font-weight: bold;
+  letter-spacing: -0.7px;
+  margin: 0;
+}
+
+.artist-listeners {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
 }
