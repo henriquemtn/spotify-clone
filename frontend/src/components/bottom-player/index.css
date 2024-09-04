@@ -1,0 +1,12 @@
+.player-container {
+  position: fixed;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #1a1a1a;
+  font-family: 'Gotham', sans-serif !important;
+}
+
+.CUbjR .track-current-time {
+    color: #fff !important;
+}

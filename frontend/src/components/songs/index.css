@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 16px 16px 16px;
+  padding: 0px;
+  border-radius: 8px;
+}
+
+.songs-row:hover{
+    background-color: #2A2A2A;
 }
 
 .songs-row .left-side,
@@ -10,12 +15,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 16px;
+  padding: 8px 0px;
 }
 
 .songs-row h2 {
   font-size: 1rem;
   color: #b3b3b3;
+  padding-left: 16px;
 }
 
 .songs-row img {
