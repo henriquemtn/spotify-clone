@@ -1,16 +1,12 @@
 import {
-  Box,
   Divider,
   IconButton,
   InputBase,
   Paper,
-  TextField,
 } from "@mui/material";
-import ImageAvatars from "../avatar";
+import ImageAvatars from "../ui/avatar";
 import OpenIcon from "../../assets/open-icon.png";
 import SearchIcon from "../../assets/search-icon.png";
-
-
 import "./index.css";
 
 export default function Header() {

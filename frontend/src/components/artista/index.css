@@ -1,0 +1,23 @@
+.container-artists {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0px 24px 24px 24px;
+}
+
+.verified-artist {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: #121212;
+    border-radius: 8px;
+}
+
+.verified-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.verified-artist p {
+    color: #fff;
+    font-size: 20px;
+}

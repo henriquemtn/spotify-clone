@@ -1,10 +1,9 @@
 import './App.css';
+import ArtistaCover from './components/artista/ArtistaCover';
 
 function App() {
   return (
-    <div className="App">
-      teste
-    </div>
+    <ArtistaCover artistId={1}/>
   );
 }
 
