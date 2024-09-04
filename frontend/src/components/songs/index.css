@@ -1,0 +1,69 @@
+.songs-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 16px 16px 16px;
+}
+
+.songs-row .left-side,
+.songs-row .right-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 16px;
+}
+
+.songs-row h2 {
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+
+.songs-row img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-left: 16px;
+  margin-right: 12px;
+}
+
+.songs-row a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.songs-row a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.songs-row .right-side {
+    gap: 16px;
+}
+
+.right-side span {
+  color: #b3b3b3;
+}
+
+.check-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.check-button::after {
+  content: url("../../assets/check-icon.png");
+  width: 16px;
+  height: 16px;
+}
+.check-button:hover::after {
+  scale: 1.1;
+}
+
+.times-played {
+  color: #b3b3b3;
+  margin: 0;
+  width: 256px;
+  padding-right: 24px;
+
+}
