@@ -1,0 +1,29 @@
+.container {
+    background-color: #000;
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 100%;
+    padding: 8px;
+    position: relative;
+}
+
+.container p {
+    color: #FFFFFF;
+}
+
+/* Div com a logo do spotify */
+.global-nav-bar {
+    margin: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+}
+
+.MuiInputBase-input.css-1jrstcx-MuiInputBase-input::placeholder {
+    color: #b3b3b3; /* Substitua pela cor desejada */
+    opacity: 1; /* Se necessário, para garantir que o placeholder seja totalmente visível */
+  }
